@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css'>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+
+    <!--
+        https://vuejs.org/v2/guide/class-and-style.html
+        https://jsfiddle.net/xkkbfL3L/1570/
+     -->
+
+    <h1>Class and Style Bindings</h1>
+
+    <h3>Example 1 - class</h3>
+
+    <div id="my-class">
+        <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">blah</div>
+        <div v-bind:class="classObject">blah 2</div>
+        <my-component v-bind:class="{ active: isActive }"></my-component>
+    </div>
+
+    <script type="text/javascript">
+        Vue.component('my-component', {
+            template: '<p class="foo bar">Hi</p>'
+        });
+
+        var vm = new Vue({
+            el: '#my-class',
+            data: {
+                isActive: true,
+                hasError: false
+            },
+            computed: {
+                classObject: function () {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === 'fatal'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
