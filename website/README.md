@@ -1,6 +1,6 @@
-# smarthome-website
+# vue-website
 
-> Smarthome website
+> vue website
 
 ## Build Setup
 

@@ -1,7 +1,7 @@
 {
-  "name": "smarthome-website",
+  "name": "vue-website",
   "version": "1.0.0",
-  "description": "Smarthome website",
+  "description": "vue website",
   "author": "André Formento <andreformento.sc@gmail.com>",
   "private": true,
   "scripts": {
